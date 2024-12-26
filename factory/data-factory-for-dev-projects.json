@@ -1,0 +1,9 @@
+{
+	"name": "data-factory-for-dev-projects",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6132ae34-a002-4b25-ad8e-bdd227ab86ce",
+		"tenantId": "d4edba1f-e43a-4f21-b13a-4802f8eff9ec"
+	}
+}

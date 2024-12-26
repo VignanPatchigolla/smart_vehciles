@@ -1,0 +1,25 @@
+{
+	"name": "project1_trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ADLS_to_SQL_DB",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/project1landing/blobs/staging/",
+			"blobPathEndsWith": ".json",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/21d3448b-176c-40e9-9587-93639c7530f7/resourceGroups/data_engineer_projects/providers/Microsoft.Storage/storageAccounts/practiceprojects",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
