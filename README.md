@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# 🚗 Smart Vehicles Data
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## 📚 Project Overview
+The **Smart Vehicles Data ** processes IoT data received daily in **AWS S3** in JSON format. This project validates incoming data, separates invalid records, and integrates the valid data into a **SQL Database** for further analysis by **Data Analysts (DA)** and **Data Scientists (DS)**.  
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Invalid data is stored in a **rejected folder** within **Azure Data Lake Storage (ADLS)** for auditing, while valid data is sent to a **staging folder** in ADLS. This automated pipeline ensures seamless data validation and storage for downstream analytics and machine learning tasks.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+---
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## 🚀 Features
+- **IoT Data Validation**: Identify and reject invalid JSON data (e.g., empty or malformed records).
+- **Data Separation**: Store rejected data in ADLS and valid data in a staging area.
+- **Automation**: Automatically trigger data pipelines upon new data arrival in AWS S3.
+- **Integration**: Load validated data into a SQL Database for analytics and data science teams.
+- **Technology Stack**:
+  - **Data Ingestion**: AWS S3
+  - **Orchestration**: Azure Data Factory (ADF)
+  - **Data Validation**: Azure Functions
+  - **Storage**: Azure Data Lake Storage (ADLS)
+  - **Database**: Azure SQL Database
+
+---
+
+## 📂 Project Structure
+```plaintext
+smart-vehicles/
+│
+├── dataset/                 # Sample IoT JSON data
+├── pipeline/                # Azure Data Factory pipeline configurations
+├── linkedService/           # Linked Services created in project
+├── trigger/                 # Triggers used in Pipeline
+├── architecture/            # Architecture diagram
+├── README.md                # Project documentation
